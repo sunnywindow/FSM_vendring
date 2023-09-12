@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -57.441
+TNS   : -1662.283
+
+Type  : Slow 1200mV 85C Model Setup 'seg_driver:u_seg_driver|sel[0]'
+Slack : -4.347
+TNS   : -4.347
+
+Type  : Slow 1200mV 85C Model Hold 'seg_driver:u_seg_driver|sel[0]'
+Slack : 0.205
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.201
+TNS   : -384.126
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'seg_driver:u_seg_driver|sel[0]'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -52.653
+TNS   : -1536.305
+
+Type  : Slow 1200mV 0C Model Setup 'seg_driver:u_seg_driver|sel[0]'
+Slack : -4.154
+TNS   : -4.154
+
+Type  : Slow 1200mV 0C Model Hold 'seg_driver:u_seg_driver|sel[0]'
+Slack : 0.177
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.201
+TNS   : -384.126
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'seg_driver:u_seg_driver|sel[0]'
+Slack : 0.162
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -23.844
+TNS   : -578.815
+
+Type  : Fast 1200mV 0C Model Setup 'seg_driver:u_seg_driver|sel[0]'
+Slack : -1.613
+TNS   : -1.613
+
+Type  : Fast 1200mV 0C Model Hold 'seg_driver:u_seg_driver|sel[0]'
+Slack : 0.034
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -273.075
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'seg_driver:u_seg_driver|sel[0]'
+Slack : 0.350
+TNS   : 0.000
+
+------------------------------------------------------------

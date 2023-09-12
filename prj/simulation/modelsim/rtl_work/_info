@@ -1,0 +1,186 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/FPGA_verilog_training_core/Fsm_Vending/prj/simulation/modelsim
+vbuzzer_ctrl
+Z1 !s110 1691655607
+!i10b 1
+!s100 lQ]UdgD6GQ`TY62dhOSMi3
+Ik;HAaWP7[>ljema4[OJjI2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1691578808
+8D:/FPGA_verilog_training_core/Fsm_Vending/rtl/buzzer_ctrl.v
+FD:/FPGA_verilog_training_core/Fsm_Vending/rtl/buzzer_ctrl.v
+L0 6
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1691655607.000000
+!s107 D:/FPGA_verilog_training_core/Fsm_Vending/rtl/buzzer_ctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl|D:/FPGA_verilog_training_core/Fsm_Vending/rtl/buzzer_ctrl.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl
+Z7 tCvgOpt 0
+vkey_debounce
+Z8 !s110 1691655606
+!i10b 1
+!s100 >?0hBCK64fdAjiKofB4B43
+I?D8>zO@8^eQkVD<UG<biJ2
+R2
+R0
+w1682651332
+8D:/FPGA_verilog_training_core/Fsm_Vending/rtl/key_debounce.v
+FD:/FPGA_verilog_training_core/Fsm_Vending/rtl/key_debounce.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z9 !s108 1691655606.000000
+!s107 D:/FPGA_verilog_training_core/Fsm_Vending/rtl/key_debounce.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl|D:/FPGA_verilog_training_core/Fsm_Vending/rtl/key_debounce.v|
+!i113 1
+R5
+R6
+R7
+vpwm_buzzer
+R8
+!i10b 1
+!s100 =6aaX?69]<=V4i8>]QZCV1
+I>4fVKk:NdlP3cZoZQLP?h3
+R2
+R0
+w1691631274
+8D:/FPGA_verilog_training_core/Fsm_Vending/rtl/pwm_buzzer.v
+FD:/FPGA_verilog_training_core/Fsm_Vending/rtl/pwm_buzzer.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 D:/FPGA_verilog_training_core/Fsm_Vending/rtl/pwm_buzzer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl|D:/FPGA_verilog_training_core/Fsm_Vending/rtl/pwm_buzzer.v|
+!i113 1
+R5
+R6
+R7
+vram_10x32
+R1
+!i10b 1
+!s100 liQ95Hd@YIK>`>7ZXb?Yf0
+IMdOP9`7dfg6fV_Xic=ozD0
+R2
+R0
+w1691632068
+8D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32/ram_10x32.v
+FD:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32/ram_10x32.v
+L0 39
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32/ram_10x32.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32|D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32/ram_10x32.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32
+R7
+vseg_driver
+R8
+!i10b 1
+!s100 G1f`Q1fiK:RQUR8zI9L4C1
+Ik_LmS[0cZUJ9K<gYk@aFe2
+R2
+R0
+w1691633864
+8D:/FPGA_verilog_training_core/Fsm_Vending/rtl/seg_driver.v
+FD:/FPGA_verilog_training_core/Fsm_Vending/rtl/seg_driver.v
+L0 6
+R3
+r1
+!s85 0
+31
+R9
+!s107 D:/FPGA_verilog_training_core/Fsm_Vending/rtl/seg_driver.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl|D:/FPGA_verilog_training_core/Fsm_Vending/rtl/seg_driver.v|
+!i113 1
+R5
+R6
+R7
+vtop_tb
+R1
+!i10b 1
+!s100 bJ3klco;S35leYzM2DD2S2
+I[]V`GORSZliaJUQej2]5e0
+R2
+R0
+w1691653488
+8D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb/top_tb.v
+FD:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb/top_tb.v
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb/top_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb|D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb/top_tb.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb
+R7
+vvending
+R8
+!i10b 1
+!s100 `nbcA<KC7koU02V^WN<H<3
+IIiP=?9FiQ?a:z3?RQh>ha2
+R2
+R0
+w1691654706
+8D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending.v
+FD:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending.v
+L0 6
+R3
+r1
+!s85 0
+31
+R9
+!s107 D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl|D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending.v|
+!i113 1
+R5
+R6
+R7
+vvending_top
+R8
+!i10b 1
+!s100 `O85R`JU3k[WZJ1J760On1
+Ilka3b?OLMfzdKC=66jN_R3
+R2
+R0
+w1691645914
+8D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending_top.v
+FD:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending_top.v
+L0 6
+R3
+r1
+!s85 0
+31
+R9
+!s107 D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl|D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending_top.v|
+!i113 1
+R5
+R6
+R7

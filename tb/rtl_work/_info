@@ -1,0 +1,170 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/FPGA_verilog_training_core/Fsm_Vending/tb
+vbuzzer_ctrl
+Z1 !s110 1691631898
+!i10b 1
+!s100 lQ]UdgD6GQ`TY62dhOSMi3
+IG0KVnXe5gfBGn9i`^DzSX3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1691578808
+8../rtl/buzzer_ctrl.v
+F../rtl/buzzer_ctrl.v
+L0 6
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1691631898.000000
+Z5 !s107 ../rtl/vending_top.v|../rtl/vending.v|../rtl/seg_driver.v|../rtl/pwm_buzzer.v|../rtl/key_debounce.v|../rtl/buzzer_ctrl.v|
+Z6 !s90 -reportprogress|300|../rtl/buzzer_ctrl.v|../rtl/key_debounce.v|../rtl/pwm_buzzer.v|../rtl/seg_driver.v|../rtl/vending.v|../rtl/vending_top.v|
+!i113 1
+Z7 tCvgOpt 0
+vkey_debounce
+R1
+!i10b 1
+!s100 >?0hBCK64fdAjiKofB4B43
+IkV9]ES`dHBQSoVSVY2o<K2
+R2
+R0
+w1682651332
+8../rtl/key_debounce.v
+F../rtl/key_debounce.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vpwm_buzzer
+R1
+!i10b 1
+!s100 =6aaX?69]<=V4i8>]QZCV1
+IfD9L84gh4>8]K;c`FR?BI3
+R2
+R0
+w1691631274
+8../rtl/pwm_buzzer.v
+F../rtl/pwm_buzzer.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vram_10x32
+R1
+!i10b 1
+!s100 5?zBieA>bRM8GimW7Ych_2
+I0m2a]lT3jObS23TKMO>hG1
+R2
+R0
+w1691570014
+8../ip/ram_10x32/ram_10x32.v
+F../ip/ram_10x32/ram_10x32.v
+L0 39
+R3
+r1
+!s85 0
+31
+R4
+!s107 ../ip/ram_10x32/ram_10x32.v|
+!s90 -reportprogress|300|../ip/ram_10x32/ram_10x32.v|
+!i113 1
+R7
+vseg_driver
+R1
+!i10b 1
+!s100 G1f`Q1fiK:RQUR8zI9L4C1
+I@K4@K;JgS32_LzPnA6R`C3
+R2
+R0
+w1691577968
+8../rtl/seg_driver.v
+F../rtl/seg_driver.v
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vtop_tb
+R1
+!i10b 1
+!s100 N9RMeU2@5Yh56c1CC4fna1
+Ibebc]Y61;=Wi<4>6SAX1g3
+R2
+R0
+w1691582554
+8top_tb.v
+Ftop_tb.v
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+!s107 top_tb.v|
+!s90 -reportprogress|300|top_tb.v|
+!i113 1
+R7
+vvending
+R1
+!i10b 1
+!s100 6FmPm1H2XzooCQUH331E40
+I6l0UBL4j24N>oz?PGDcJe2
+R2
+R0
+w1691582518
+8../rtl/vending.v
+F../rtl/vending.v
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vvending_top
+R1
+!i10b 1
+!s100 H<UaGSKZVc:X[MNIX?akz2
+IUMJHAS`ARSl[kQDFoTz0`3
+R2
+R0
+w1691577636
+8../rtl/vending_top.v
+F../rtl/vending_top.v
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7

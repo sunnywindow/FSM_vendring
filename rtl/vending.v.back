@@ -1,0 +1,425 @@
+/*---------------------------------------------------------------*/
+/*----------------module:                  ----------------------*/
+/*-----------create_time:                  ----------------------*/
+/*------------------name:yanghaidong       ----------------------*/
+/*---------------------------------------------------------------*/
+module vending(
+    input	wire		        clk		        ,
+    input	wire		        rst_n	        ,
+    //输入信号
+    input	wire    [3:0]		key_in	        ,
+    //输出信号
+    output  reg     [3:0]       led             ,
+    output  reg     [5:0]       dot             ,
+    output  reg     [24:0]      seg_value       ,
+    output  reg     [1:0]       buzzer_en     
+);
+    //内部信号
+    parameter   MAX_1S = 49_999_999;//1s
+    parameter 
+                IDLE    = 8'b00000001,
+                WATER   = 8'b00000010,
+                COKE    = 8'b00000100,
+                SPRITE  = 8'b00001000,
+                BREAD   = 8'b00010000,
+                SUBMIT  = 8'b00100000,//提交
+                SUCCESS = 8'b01000000,//购买成功
+                FAIL    = 8'b10000000;//购买失败
+    
+    parameter   WATER_MONEY     = 6'd28;//2.8元
+    parameter   COKE_MONEY      = 6'd31;
+    parameter   SPRITE_MONEY    = 6'd35;
+    parameter   BREAD_MONEY     = 6'd42;
+
+    reg     [7:0]   cstate,nstate;
+
+    reg     [25:0]  cnt_1s      ;//1s计数器
+    wire            add_cnt_1s  ;
+    wire            end_cnt_1s  ;
+
+    reg     [2:0]   cnt_4s      ;//通过1s计数器实现的4s计数器
+    wire            add_cnt_4s  ;
+    wire            end_cnt_4s  ;
+
+    reg     [2:0]   goods       ;//选择商品
+    reg     [9:0]   pay_money   ;//顾客所付付金额
+    reg     [9:0]   give_money  ;
+
+    reg     [3:0]   key_r       ;//按键保存
+
+    reg     [7:0]   buy_number  ;//购买数量
+
+
+    //内部逻辑
+    //1s计数器
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            cnt_1s <= 26'd0;
+        end
+        else begin
+            if (add_cnt_1s) begin
+                if (end_cnt_1s) begin
+                    cnt_1s <= 26'd0;
+                end
+                else begin
+                    cnt_1s <= cnt_1s + 26'd1;
+                end
+            end
+            else begin
+                cnt_1s <= cnt_1s;
+            end
+        end
+    end
+
+    assign add_cnt_1s = cstate == SUCCESS || cstate == FAIL;
+    assign end_cnt_1s = add_cnt_1s && cnt_1s == MAX_1S;
+
+    //4s计数器
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            cnt_4s <= 3'd0;
+        end
+        else begin
+            if (add_cnt_4s) begin
+                if (end_cnt_4s) begin
+                    cnt_4s <= 3'd0;
+                end
+                else begin
+                    cnt_4s <= cnt_4s + 3'd1;
+                end
+            end
+            else begin
+                cnt_4s <= cnt_4s;
+            end
+        end
+    end
+
+    assign add_cnt_4s = end_cnt_1s;
+    assign end_cnt_4s = add_cnt_4s && cnt_4s == 3;
+
+    //第一段状态机
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            cstate <= IDLE;
+        end
+        else begin
+            cstate <= nstate;
+        end
+    end
+
+    //第二段状态机
+    always @(*) begin
+        case (cstate)
+            IDLE    :begin  //根据goods切换到不同的商品，按下key[3]时确定商品
+                if (goods == 3'd0 && key_in == 4'b1000) begin
+                    nstate = WATER;
+                end
+                else if (goods == 3'd1 && key_in == 4'b1000) begin
+                    nstate = COKE;
+                end
+                else if (goods == 3'd2 && key_in == 4'b1000) begin
+                    nstate = SPRITE;
+                end
+                else if (goods == 3'd3 && key_in == 4'b1000) begin
+                    nstate = BREAD;
+                end
+                else begin
+                    nstate = IDLE;
+                end
+            end
+            WATER   :begin//按下key[3]提交
+                if (key_in==4'b1000) begin
+                    nstate = SUBMIT;
+                end
+                else begin
+                    nstate = WATER;
+                end
+            end
+            COKE    :begin//按下key[3]提交
+                if (key_in==4'b1000) begin
+                    nstate = SUBMIT;
+                end
+                else begin
+                    nstate = COKE;
+                end
+            end
+            SPRITE  :begin//按下key[3]提交
+                if (key_in==4'b1000) begin
+                    nstate = SUBMIT;
+                end
+                else begin
+                    nstate = SPRITE;
+                end
+            end
+            BREAD  :begin//按下key[3]提交
+                if (key_in==4'b1000) begin
+                    nstate = SUBMIT;
+                end
+                else begin
+                    nstate = BREAD;
+                end
+            end
+            SUBMIT  :begin
+                case (goods)
+                    3'd0: begin
+                        if (pay_money < (WATER_MONEY * buy_number)) begin
+                            nstate = FAIL;
+                        end
+                        else begin
+                            nstate = SUCCESS;
+                        end
+                    end
+                    3'd1:begin
+                        if (pay_money < (COKE_MONEY * buy_number)) begin
+                            nstate = FAIL;
+                        end
+                        else begin
+                            nstate = SUCCESS;
+                        end
+                    end
+                    3'd2:begin
+                        if (pay_money < (SPRITE_MONEY * buy_number)) begin
+                            nstate = FAIL;
+                        end
+                        else begin
+                            nstate = SUCCESS;
+                        end
+                    end
+                    3'd3:begin
+                        if (pay_money < (BREAD_MONEY * buy_number)) begin
+                            nstate = FAIL;
+                        end
+                        else begin
+                            nstate = SUCCESS;
+                        end
+                    end
+                    default: nstate = SUBMIT;
+                endcase
+            end
+            SUCCESS :begin
+                if (end_cnt_4s) begin
+                    nstate = IDLE;
+                end
+                else begin
+                    nstate = SUCCESS;
+                end
+            end
+            FAIL    : begin
+                if (end_cnt_4s) begin
+                    nstate = IDLE;
+                end
+                else begin
+                    nstate = FAIL;
+                end
+            end
+            default: nstate = IDLE;
+        endcase
+    end
+
+    //商品选择，只要在IDLE状态才能选择商品
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            goods <= 3'd0;
+        end
+        else if (goods == 3'd4) begin
+            goods <= 3'd0;
+        end
+        else if (key_in==4'b0001 && cstate == IDLE) begin
+            goods <= goods + 3'd1;
+        end
+        else begin
+            goods <= goods;
+        end
+    end
+
+    //商品个数选择，只要在IDLE状态才能选择商品个数，最大20个
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            buy_number <= 8'd1;
+        end
+        else if (buy_number == 8'd21) begin
+            buy_number <= 8'd1;
+        end
+        else if (key_in==4'b0010 && cstate == IDLE) begin//增加个数
+            buy_number <= buy_number + 8'd1;
+        end
+        else if (key_in==4'b0100 && cstate == IDLE) begin//减少个数
+            if (buy_number == 8'd1) begin
+                buy_number <= 8'd1;
+            end
+            else begin
+                buy_number <= buy_number - 8'd1;
+            end
+        end
+        else begin
+            buy_number <= buy_number;
+        end
+    end
+
+    //顾客所付金额，在非IDLE、SUCCESS、SUBMIT状态生效，按下key[0]付0.5元(记录为5)，key[1]付1元(记录为10)
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            pay_money <= 32'd0;
+        end
+        else if (cstate != IDLE && cstate != SUCCESS && cstate != SUBMIT && cstate != FAIL) begin
+            if (key_in == 4'b0001 ) begin
+                pay_money <= pay_money + 32'd1;
+            end
+            else if (key_in == 4'b0010) begin
+                pay_money <= pay_money + 32'd5;
+            end
+            else if (key_in == 4'b0100) begin
+                pay_money <= pay_money + 32'd10;
+            end
+            else begin
+                pay_money <= pay_money;
+            end
+        end
+        else if(cstate == IDLE) begin
+            pay_money <= 32'd0;
+        end
+        else begin
+            pay_money <= pay_money;
+        end
+    end
+
+    //根据用户选择的商品与所付金额找零,success状态时找零，fail状态退回所付金额
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            give_money <= 32'd0;
+        end
+        else if (cstate == SUCCESS) begin
+            case (goods)
+                3'd0: give_money <= pay_money - (WATER_MONEY * buy_number);
+                3'd1: give_money <= pay_money - (COKE_MONEY * buy_number );
+                3'd2: give_money <= pay_money - (SPRITE_MONEY * buy_number );
+                3'd3: give_money <= pay_money - (BREAD_MONEY * buy_number );
+                default: give_money <= 32'd0;
+            endcase
+        end
+        else if (cstate == FAIL) begin
+            give_money <= pay_money;
+        end
+        else begin
+            give_money <= 32'd0;
+        end
+    end
+
+    //按键状态保存
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            key_r <= 4'b0000;
+        end
+        else if (key_in == 4'b0001) begin
+            key_r <= 4'b0001;
+        end
+        else if (key_in == 4'b0010) begin
+            key_r <= 4'b0010;
+        end
+        else if (key_in == 4'b0100) begin
+            key_r <= 4'b0100;
+        end
+        else if (key_in == 4'b1000) begin
+            key_r <= 4'b1000;
+        end
+        else begin
+            key_r <= key_r;
+        end
+    end
+    //LED灯显示
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            led <= 4'b0000;
+        end
+        else begin
+            case (cstate)
+                IDLE,WATER,COKE,SPRITE,BREAD,SUBMIT : led <= key_r;
+                SUCCESS : begin
+                    case (cnt_4s)
+                        3'd0: led <= 4'b0000;
+                        3'd1: led <= 4'b1111;
+                        3'd2: led <= 4'b0000;
+                        3'd3: led <= 4'b1111;
+                        default: led <= 4'b0000;
+                    endcase
+                end
+                FAIL    : begin
+                    case (cnt_4s)
+                        3'd0: led <= 4'b0001;
+                        3'd1: led <= 4'b0011;
+                        3'd2: led <= 4'b0111;
+                        3'd3: led <= 4'b1111;
+                        default: led <= 4'b0000;
+                    endcase
+                end
+                default:led <= 4'b0000;
+            endcase
+        end
+    end
+
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            seg_value <= 25'd0;
+        end
+        else begin
+            case (cstate)
+                IDLE: begin
+                    case (goods)
+                        3'd0: seg_value <= (goods + 2'd1)*100000 + WATER_MONEY   * 100 + buy_number;
+                        3'd1: seg_value <= (goods + 2'd1)*100000 + COKE_MONEY    * 100 + buy_number;
+                        3'd2: seg_value <= (goods + 2'd1)*100000 + SPRITE_MONEY  * 100 + buy_number;
+                        3'd3: seg_value <= (goods + 2'd1)*100000 + BREAD_MONEY   * 100 + buy_number;
+                        default: seg_value <= 25'd0;
+                    endcase
+                end
+                WATER   : seg_value <= (WATER_MONEY  * buy_number) * 1000 + pay_money;
+                COKE    : seg_value <= (COKE_MONEY   * buy_number) * 1000 + pay_money;
+                SPRITE  : seg_value <= (SPRITE_MONEY * buy_number) * 1000 + pay_money;
+                BREAD   : seg_value <= (BREAD_MONEY  * buy_number) * 1000 + pay_money;
+                SUCCESS    : begin
+                    case (goods)
+                        3'd0: seg_value <= (goods + 2'd1)*100000 + (WATER_MONEY  * buy_number) * 100 + give_money;
+                        3'd1: seg_value <= (goods + 2'd1)*100000 + (COKE_MONEY   * buy_number) * 100 + give_money;
+                        3'd2: seg_value <= (goods + 2'd1)*100000 + (SPRITE_MONEY * buy_number) * 100 + give_money;
+                        3'd3: seg_value <= (goods + 2'd1)*100000 + (BREAD_MONEY  * buy_number) * 100 + give_money;
+                        default: seg_value <= 25'd0;
+                    endcase
+                end
+                FAIL  : seg_value <= give_money;
+                default: seg_value <= 25'd0;
+            endcase
+        end
+    end
+
+    //蜂鸣器信号，当购买成功时响曲1，购买失败时响曲2
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            buzzer_en <= 2'b0;
+        end
+        else if (cstate == SUCCESS) begin
+            buzzer_en <= 2'd1;
+        end
+        else if (cstate == FAIL) begin
+            buzzer_en <= 2'd2;
+        end
+        else begin
+            buzzer_en <= 2'd0;
+        end
+    end
+
+    //数码管小数点显示
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            dot <= 6'b111_111;
+        end
+        else begin
+            case (cstate)
+                IDLE: dot <= 6'b110_010;
+                WATER,COKE,SPRITE,BREAD: dot <= 6'b101_001;
+                SUCCESS: dot <= 6'b100_010;
+                FAIL : dot <= 6'b101_111;
+                default: dot <= 6'b111_111;
+            endcase
+        end
+    end
+endmodule

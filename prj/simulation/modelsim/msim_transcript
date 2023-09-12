@@ -1,0 +1,179 @@
+# Reading D:/intelFPGA/18.1A/modelsim_ase/tcl/vsim/pref.tcl
+# do Fsm_Vending_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/intelFPGA/18.1A/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl {D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending_top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:20:06 on Aug 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl" D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending_top.v 
+# -- Compiling module vending_top
+# 
+# Top level modules:
+# 	vending_top
+# End time: 16:20:06 on Aug 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl {D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:20:06 on Aug 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl" D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending.v 
+# -- Compiling module vending
+# 
+# Top level modules:
+# 	vending
+# End time: 16:20:06 on Aug 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl {D:/FPGA_verilog_training_core/Fsm_Vending/rtl/seg_driver.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:20:06 on Aug 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl" D:/FPGA_verilog_training_core/Fsm_Vending/rtl/seg_driver.v 
+# -- Compiling module seg_driver
+# 
+# Top level modules:
+# 	seg_driver
+# End time: 16:20:06 on Aug 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl {D:/FPGA_verilog_training_core/Fsm_Vending/rtl/pwm_buzzer.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:20:06 on Aug 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl" D:/FPGA_verilog_training_core/Fsm_Vending/rtl/pwm_buzzer.v 
+# -- Compiling module pwm_buzzer
+# 
+# Top level modules:
+# 	pwm_buzzer
+# End time: 16:20:06 on Aug 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl {D:/FPGA_verilog_training_core/Fsm_Vending/rtl/key_debounce.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:20:06 on Aug 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl" D:/FPGA_verilog_training_core/Fsm_Vending/rtl/key_debounce.v 
+# -- Compiling module key_debounce
+# 
+# Top level modules:
+# 	key_debounce
+# End time: 16:20:07 on Aug 10,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl {D:/FPGA_verilog_training_core/Fsm_Vending/rtl/buzzer_ctrl.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:20:07 on Aug 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/rtl" D:/FPGA_verilog_training_core/Fsm_Vending/rtl/buzzer_ctrl.v 
+# -- Compiling module buzzer_ctrl
+# 
+# Top level modules:
+# 	buzzer_ctrl
+# End time: 16:20:07 on Aug 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32 {D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32/ram_10x32.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:20:07 on Aug 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32" D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32/ram_10x32.v 
+# -- Compiling module ram_10x32
+# 
+# Top level modules:
+# 	ram_10x32
+# End time: 16:20:07 on Aug 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb {D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb/top_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:20:07 on Aug 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb" D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb/top_tb.v 
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 16:20:07 on Aug 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  top_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" top_tb 
+# Start time: 16:20:07 on Aug 10,2023
+# Loading work.top_tb
+# Loading work.vending_top
+# Loading work.key_debounce
+# Loading work.vending
+# Loading work.ram_10x32
+# Loading altera_mf_ver.altsyncram
+# Loading work.seg_driver
+# Loading work.buzzer_ctrl
+# Loading work.pwm_buzzer
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb/top_tb.v(20): [PCDPC] - Port size (4) does not match connection size (1) for port 'led'. The port definition is at: D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending_top.v(14).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_vending_top File: D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending_top.v
+# ** Warning: (vsim-3015) D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending.v(53): [PCDPC] - Port size (10) does not match connection size (1) for port 'data'. The port definition is at: D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32/ram_10x32.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_vending_top/u_vending/ram_10x32_inst File: D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32/ram_10x32.v
+# 
+# do D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb/wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/Group1 -group {Region: sim:/top_tb/u_vending_top} -radix unsigned /top_tb/u_vending_top/clk
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/Group1 -group {Region: sim:/top_tb/u_vending_top} -radix unsigned /top_tb/u_vending_top/rst_n
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/Group1 -group {Region: sim:/top_tb/u_vending_top} -radix binary /top_tb/u_vending_top/key
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/Group1 -group {Region: sim:/top_tb/u_vending_top} -radix binary /top_tb/u_vending_top/sel
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/Group1 -group {Region: sim:/top_tb/u_vending_top} -radix binary /top_tb/u_vending_top/seg
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/Group1 -group {Region: sim:/top_tb/u_vending_top} -radix binary /top_tb/u_vending_top/led
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/Group1 -group {Region: sim:/top_tb/u_vending_top} -radix unsigned /top_tb/u_vending_top/buzzer
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/Group1 -group {Region: sim:/top_tb/u_vending_top} -radix unsigned /top_tb/u_vending_top/key_out
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/Group1 -group {Region: sim:/top_tb/u_vending_top} -radix unsigned /top_tb/u_vending_top/seg_value
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/Group1 -group {Region: sim:/top_tb/u_vending_top} -radix unsigned /top_tb/u_vending_top/buzzer_en
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/Group1 -group {Region: sim:/top_tb/u_vending_top} -radix binary /top_tb/u_vending_top/dot
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix binary /top_tb/u_vending_top/u_vending/key_in
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/seg_value
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/buzzer_en
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/cstate
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/nstate
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/cnt_1s
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/add_cnt_1s
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/end_cnt_1s
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/cnt_4s
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/add_cnt_4s
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/end_cnt_4s
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/goods
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/pay_money
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix binary /top_tb/u_vending_top/u_vending/key_r
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/buy_number
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/ram_data
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/summary
+# add wave -noupdate -expand -label sim:/top_tb/u_vending_top/u_vending/Group1 -group {Region: sim:/top_tb/u_vending_top/u_vending} -radix unsigned /top_tb/u_vending_top/u_vending/rden
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {17286468 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 150
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 1
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ps} {32289010 ps}
+add wave -position insertpoint sim:/top_tb/u_vending_top/u_vending/*
+restart
+# ** Warning: (vsim-3015) D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb/top_tb.v(20): [PCDPC] - Port size (4) does not match connection size (1) for port 'led'. The port definition is at: D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending_top.v(14).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_vending_top File: D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending_top.v
+# ** Warning: (vsim-3015) D:/FPGA_verilog_training_core/Fsm_Vending/rtl/vending.v(53): [PCDPC] - Port size (10) does not match connection size (1) for port 'data'. The port definition is at: D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32/ram_10x32.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_vending_top/u_vending/ram_10x32_inst File: D:/FPGA_verilog_training_core/Fsm_Vending/ip/ram_10x32/ram_10x32.v
+run -all
+# ** Note: Data structure takes 10573091 bytes of memory
+#          Process time 0.08 seconds
+#          $stop    : D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb/top_tb.v(74)
+#    Time: 604023 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at D:/FPGA_verilog_training_core/Fsm_Vending/prj/../tb/top_tb.v line 74
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/FPGA_verilog_training_core/Fsm_Vending/prj/simulation/modelsim/wave.do
+# End time: 16:23:42 on Aug 10,2023, Elapsed time: 0:03:35
+# Errors: 0, Warnings: 4

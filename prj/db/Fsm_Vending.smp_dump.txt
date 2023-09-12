@@ -1,0 +1,8 @@
+
+State Machine - |vending_top|vending:u_vending|cstate
+Name cstate.FAIL cstate.SUCCESS cstate.SUBMIT cstate.COIN cstate.IDLE 
+cstate.IDLE 0 0 0 0 0 
+cstate.COIN 0 0 0 1 1 
+cstate.SUBMIT 0 0 1 0 1 
+cstate.SUCCESS 0 1 0 0 1 
+cstate.FAIL 1 0 0 0 1 

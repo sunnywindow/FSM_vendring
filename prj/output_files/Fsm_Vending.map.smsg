@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at buzzer_ctrl.v(129): always construct contains both blocking and non-blocking assignments File: D:/FPGA_verilog_training_core/Fsm_Vending/rtl/buzzer_ctrl.v Line: 129

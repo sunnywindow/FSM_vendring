@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Aug 10 16:52:31 2023
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : Fsm_Vending
+Top-level Entity Name : vending_top
+Family : Cyclone IV E
+Device : EP4CE6F17C8
+Timing Models : Final
+Total logic elements : 3,350 / 6,272 ( 53 % )
+    Total combinational functions : 3,343 / 6,272 ( 53 % )
+    Dedicated logic registers : 252 / 6,272 ( 4 % )
+Total registers : 252
+Total pins : 25 / 180 ( 14 % )
+Total virtual pins : 0
+Total memory bits : 160 / 276,480 ( < 1 % )
+Embedded Multiplier 9-bit elements : 2 / 30 ( 7 % )
+Total PLLs : 0 / 2 ( 0 % )
